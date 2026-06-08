@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Engagement Invitation | Reny & Joseph</title>
+<title>Betrothal Invitation | Reny & Joseph</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet">
@@ -12,24 +12,27 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --gold:#b8873a;
-  --gold-l:#d4a955;
-  --gold-m:#c9974a;
-  --gold-p:#f7efe0;
-  --rose:#e8c4c4;
-  --rose-d:#c49090;
-  --cream:#fffdf8;
-  --ivory:#faf3e8;
-  --parchment:#f5e8d0;
-  --warm:#3d2b1f;
-  --brown:#7a5535;
-  --text:#4a3020;
-  --muted:#9a7a60;
+  --gold:#c9a84c;
+  --gold-l:#e2c06a;
+  --gold-m:#b8933a;
+  --gold-p:#fdf4e0;
+  --dark:#1a2e1f;
+  --dark2:#243828;
+  --forest:#2d5a3d;
+  --sage:#4a7c59;
+  --cream:#fffef9;
+  --ivory:#f7f3ea;
+  --warm-white:#fefcf5;
+  --text-light:#f5f0e8;
+  --muted-light:rgba(245,240,232,0.65);
+  --muted-dark:#7a9e85;
+  --border-dark:rgba(201,168,76,0.25);
+  --border-light:rgba(45,90,61,0.15);
 }
 
 html{scroll-behavior:smooth}
 body{
-  background:linear-gradient(135deg,#fef9f0 0%,#fdf0e8 50%,#fef5f0 100%);
+  background:#1a2e1f;
   font-family:'Lato',sans-serif;
   overflow-x:hidden;
   min-height:100vh;
@@ -131,9 +134,10 @@ body{
   position:absolute;left:5%;right:5%;bottom:4%;height:88%;
   background:linear-gradient(170deg,#fffdf8,#fff8ee);
   border:1px solid rgba(184,135,58,0.3);
-  z-index:2;border-radius:3px;
+  z-index:2;
+  will-change:transform;border-radius:3px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  transition:transform 1s cubic-bezier(0.4,0,0.2,1) 0.5s;
+  transition:transform 0.9s cubic-bezier(0.22,1,0.36,1) 0.35s, z-index 0s linear 0.2s;
   box-shadow:0 2px 12px rgba(184,135,58,0.1);
 }
 .env-card::before{
@@ -158,7 +162,7 @@ body{
 .env-flap{
   position:absolute;top:0;left:0;width:100%;height:52%;
   transform-style:preserve-3d;transform-origin:top center;
-  transition:transform 0.8s cubic-bezier(0.4,0,0.2,1);
+  transition:transform 0.8s cubic-bezier(0.4,0,0.2,1), z-index 0s linear 0.4s;
   z-index:4;
 }
 .env-flap-face,.env-flap-back{
@@ -199,9 +203,10 @@ body{
 }
 
 /* open state */
-.env-open .env-flap{transform:rotateX(185deg);}
+.env-open .env-flap{transform:rotateX(185deg);z-index:1 !important;}
 .env-open .env-seal{opacity:0;transform:translateX(-50%) scale(0.3);}
-.env-open .env-card{transform:translateY(-62%);}
+.env-open .env-card{transform:translateY(-62%);z-index:6 !important;}
+.env-open .env-pocket{z-index:0 !important;}
 
 .env-tap{
   position:absolute;bottom:-52px;width:100%;text-align:center;
@@ -230,7 +235,7 @@ main{
              transform 1.1s cubic-bezier(0.22,1,0.36,1) 0.3s;
   max-width:440px;margin:0 auto;
   background:var(--cream);
-  box-shadow:0 0 60px rgba(120,80,30,0.12);
+  box-shadow:0 0 80px rgba(0,0,0,0.4);
   position:relative;overflow:hidden;
 }
 .revealed main{opacity:1;transform:none;}
@@ -268,26 +273,25 @@ main{
 
 /* ── HERO ── */
 .hero{
-  background:linear-gradient(170deg,#fff8ee 0%,#fdf2e0 100%);
+  background:linear-gradient(170deg,var(--dark2) 0%,var(--dark) 100%);
   padding:60px 36px 50px;text-align:center;position:relative;overflow:hidden;
-  border-bottom:1px solid rgba(184,135,58,0.12);
+  border-bottom:3px solid var(--gold-m);
 }
 /* subtle floral bg pattern */
 .hero::before{
   content:'';position:absolute;inset:0;
   background-image:
-    radial-gradient(circle at 15% 25%,rgba(232,196,196,0.3) 0%,transparent 40%),
-    radial-gradient(circle at 85% 75%,rgba(232,196,196,0.3) 0%,transparent 40%),
-    radial-gradient(circle at 50% 50%,rgba(184,135,58,0.04) 0%,transparent 60%);
+    radial-gradient(circle at 15% 25%,rgba(201,168,76,0.08) 0%,transparent 50%),
+    radial-gradient(circle at 85% 75%,rgba(201,168,76,0.08) 0%,transparent 50%);
   pointer-events:none;
 }
 .hero-inner-border{
   position:absolute;inset:16px;
-  border:1px solid rgba(184,135,58,0.15);pointer-events:none;
+  border:1px solid rgba(201,168,76,0.3);pointer-events:none;
 }
 .hero-inner-border::before{
   content:'';position:absolute;inset:7px;
-  border:1px solid rgba(184,135,58,0.07);
+  border:1px solid rgba(201,168,76,0.12);
 }
 
 /* corner ornaments */
@@ -300,15 +304,15 @@ main{
 
 .hero-tag{
   font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.5em;
-  color:var(--muted);text-transform:uppercase;margin-bottom:18px;
+  color:var(--muted-light);text-transform:uppercase;margin-bottom:18px;
 }
 .hero-names{
   font-family:'Great Vibes',cursive;font-size:4.5rem;
-  color:var(--warm);line-height:1;position:relative;
+  color:var(--gold-l);line-height:1;position:relative;
 }
 .hero-amp{
   font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;
-  color:var(--gold);display:block;margin:8px 0;
+  color:rgba(201,168,76,0.7);display:block;margin:8px 0;
 }
 .hero-divider{
   display:flex;align-items:center;justify-content:center;gap:12px;
@@ -323,40 +327,40 @@ main{
   width:8px;height:8px;
   background:var(--gold-l);
   transform:rotate(45deg);
-  box-shadow:0 0 6px rgba(184,135,58,0.3);
+  box-shadow:0 0 10px rgba(201,168,76,0.5);
 }
 
 .hero-verse{
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:14px;color:var(--brown);line-height:1.75;
+  font-size:14px;color:rgba(245,240,232,0.85);line-height:1.75;
 }
 .hero-verse-ref{
   font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.3em;
-  color:var(--muted);margin-top:10px;text-transform:uppercase;
+  color:rgba(201,168,76,0.6);margin-top:10px;text-transform:uppercase;
 }
 
 /* ── PARENTS ── */
 .parents{
-  background:#fff;padding:36px 32px;text-align:center;
-  border-bottom:1px solid rgba(184,135,58,0.1);
+  background:var(--ivory);padding:36px 32px;text-align:center;
+  border-bottom:1px solid rgba(45,90,61,0.1);
 }
 .ornate-wave{margin:0 auto 20px;display:block;}
 .parents-names{
   font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;
-  color:var(--warm);
+  color:var(--dark);
 }
 .parents-addr{
   font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.2em;
-  color:var(--gold);text-transform:uppercase;margin-top:5px;
+  color:var(--gold-m);text-transform:uppercase;margin-top:5px;
 }
 .parents-desc{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.5px;
-  color:var(--muted);margin-top:14px;line-height:1.75;
+  color:#5a7a62;margin-top:14px;line-height:1.75;
 }
 
 /* ── PHOTO ── */
 .photo-section{
-  background:var(--ivory);padding:0 44px 32px;
+  background:var(--dark2);padding:32px 44px 40px;
   display:flex;justify-content:center;
 }
 .photo-wrap{position:relative;}
@@ -383,11 +387,12 @@ main{
 
 /* ── COUPLE CARDS ── */
 .couple-section{
-  background:var(--cream);padding:32px 22px;
+  background:var(--ivory);padding:32px 22px;
 }
 .couple-card{
-  background:#fff;
-  border:1px solid rgba(184,135,58,0.18);
+  background:var(--cream);
+  border:1px solid rgba(45,90,61,0.18);
+  box-shadow:0 4px 24px rgba(26,46,31,0.08);
   padding:28px 22px;text-align:center;position:relative;
   margin-bottom:18px;border-radius:3px;
   box-shadow:0 4px 20px rgba(120,80,30,0.06);
@@ -402,14 +407,14 @@ main{
 .cc-c.br{bottom:8px;right:8px;border-width:0 1.5px 1.5px 0;}
 .cc-avatar{
   width:60px;height:60px;border-radius:50%;
-  background:linear-gradient(135deg,var(--gold-p),var(--parchment));
-  border:1.5px solid rgba(184,135,58,0.25);
+  background:linear-gradient(135deg,var(--dark),var(--forest));
+  border:1.5px solid rgba(201,168,76,0.4);
   display:flex;align-items:center;justify-content:center;
-  margin:0 auto 14px;font-size:1.5rem;color:var(--gold);
+  margin:0 auto 14px;font-size:1.5rem;color:var(--gold-l);
 }
 .cc-name{
   font-family:'Great Vibes',cursive;font-size:2.4rem;
-  color:var(--warm);margin-bottom:8px;
+  color:var(--dark);margin-bottom:8px;
 }
 .cc-bar{
   width:50px;height:1px;
@@ -418,21 +423,21 @@ main{
 }
 .cc-role{
   font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:0.3em;
-  color:var(--gold-m);text-transform:uppercase;margin-bottom:10px;
+  color:var(--forest);text-transform:uppercase;margin-bottom:10px;
 }
 .cc-parent{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12.5px;
-  color:var(--muted);line-height:1.65;
+  color:#5a7a62;line-height:1.65;
 }
 .couple-with{
   text-align:center;
   font-family:'Great Vibes',cursive;font-size:2.2rem;
-  color:rgba(184,135,58,0.4);margin:2px 0 18px;
+  color:var(--gold-m);margin:2px 0 18px;opacity:0.7;
 }
 
 /* ── EVENTS ── */
 .events{
-  background:linear-gradient(170deg,#fff8ee,#fdf2de);
+  background:linear-gradient(170deg,var(--dark2),var(--dark));
   padding:44px 22px;
   border-top:1px solid rgba(184,135,58,0.12);
   border-bottom:1px solid rgba(184,135,58,0.12);
@@ -441,29 +446,29 @@ main{
 .events::before{
   content:'';position:absolute;inset:0;
   background:
-    radial-gradient(ellipse at 10% 20%,rgba(232,196,196,0.2) 0%,transparent 50%),
-    radial-gradient(ellipse at 90% 80%,rgba(184,135,58,0.06) 0%,transparent 50%);
+    radial-gradient(ellipse at 10% 20%,rgba(201,168,76,0.06) 0%,transparent 50%),
+    radial-gradient(ellipse at 90% 80%,rgba(201,168,76,0.04) 0%,transparent 50%);
   pointer-events:none;
 }
 .events-header{text-align:center;margin-bottom:32px;position:relative;z-index:2;}
 .events-tag{
   font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.45em;
-  color:var(--muted);text-transform:uppercase;margin-bottom:10px;
+  color:var(--muted-light);text-transform:uppercase;margin-bottom:10px;
 }
 .events-date-big{
   font-family:'Cinzel',serif;font-size:26px;font-weight:700;
-  color:var(--warm);
+  color:var(--text-light);
 }
 .events-day{
   font-family:'Great Vibes',cursive;font-size:1.9rem;
-  color:var(--gold);margin-top:4px;
+  color:var(--gold-l);margin-top:4px;
 }
 
 .event-card{
-  background:#fff;border:1px solid rgba(184,135,58,0.18);
+  background:var(--warm-white);border:1px solid rgba(201,168,76,0.2);
   border-radius:4px;padding:28px 20px;text-align:center;
   position:relative;margin-bottom:0;z-index:2;
-  box-shadow:0 4px 20px rgba(120,80,30,0.07);
+  box-shadow:0 6px 30px rgba(0,0,0,0.25);
   transition:transform 0.3s ease;
 }
 .event-card:hover{transform:translateY(-3px);}
@@ -474,16 +479,16 @@ main{
 .event-icon{font-size:1.9rem;color:var(--gold);margin-bottom:12px;opacity:0.8;}
 .event-title{
   font-family:'Cinzel',serif;font-size:14px;font-weight:600;
-  color:var(--warm);margin-bottom:8px;letter-spacing:0.08em;
+  color:var(--dark);margin-bottom:8px;letter-spacing:0.08em;
 }
 .event-div{width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-l),transparent);margin:0 auto 10px;opacity:0.6;}
 .event-time{
   font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;
-  color:var(--warm);margin-bottom:4px;
+  color:var(--dark);margin-bottom:4px;
 }
 .event-venue{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;
-  color:var(--muted);line-height:1.65;margin-bottom:16px;
+  color:#5a7a62;line-height:1.65;margin-bottom:16px;
 }
 .map-btn{
   display:inline-flex;align-items:center;gap:7px;
@@ -499,9 +504,9 @@ main{
 .cal-btn{
   display:inline-flex;align-items:center;gap:8px;
   margin-top:28px;padding:10px 28px;
-  border:1px solid rgba(184,135,58,0.5);
-  background:linear-gradient(135deg,#fff8ee,#fdf2de);
-  color:var(--gold);font-family:'Cinzel',serif;
+  border:1px solid rgba(201,168,76,0.45);
+  background:transparent;
+  color:var(--gold-l);font-family:'Cinzel',serif;
   font-size:8px;letter-spacing:0.28em;text-transform:uppercase;
   text-decoration:none;border-radius:2px;
   transition:all 0.3s;position:relative;z-index:2;
@@ -510,16 +515,16 @@ main{
 
 /* ── COUNTDOWN ── */
 .countdown-section{
-  background:#fff;padding:40px 22px;text-align:center;
-  border-bottom:1px solid rgba(184,135,58,0.1);
+  background:var(--ivory);padding:40px 22px;text-align:center;
+  border-bottom:1px solid rgba(45,90,61,0.1);
 }
 .cd-label{
   font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.4em;
-  color:var(--muted);text-transform:uppercase;margin-bottom:24px;
+  color:var(--forest);text-transform:uppercase;margin-bottom:24px;
 }
 .cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .cd-box{
-  background:linear-gradient(170deg,#fffdf8,#faf5e8);
+  background:var(--cream);
   border:1px solid rgba(184,135,58,0.2);
   padding:16px 6px;text-align:center;position:relative;border-radius:3px;
 }
@@ -529,29 +534,29 @@ main{
 }
 .cd-num{
   font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;
-  color:var(--warm);display:block;line-height:1;
+  color:var(--dark);display:block;line-height:1;
   transition:transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
 }
 .cd-num.pop{transform:scale(1.25);}
 .cd-unit{
   font-family:'Cinzel',serif;font-size:7px;letter-spacing:0.2em;
-  color:var(--muted);text-transform:uppercase;margin-top:4px;display:block;
+  color:var(--muted-dark);text-transform:uppercase;margin-top:4px;display:block;
 }
 
 /* ── FOOTER ── */
 footer{
-  background:linear-gradient(180deg,#fff8ee,#fdf3e0);
+  background:linear-gradient(180deg,var(--dark2),var(--dark));
   padding:40px 32px 52px;text-align:center;
   border-top:1px solid rgba(184,135,58,0.12);
   position:relative;
 }
 footer::before{
   content:'';position:absolute;inset:16px;
-  border:1px solid rgba(184,135,58,0.1);pointer-events:none;
+  border:1px solid rgba(201,168,76,0.18);pointer-events:none;
 }
 .footer-tag{
   font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.4em;
-  color:var(--muted);text-transform:uppercase;margin-bottom:16px;
+  color:var(--muted-light);text-transform:uppercase;margin-bottom:16px;
 }
 .footer-divider{
   width:80px;height:1px;
@@ -560,41 +565,53 @@ footer::before{
 }
 .footer-contact a{
   display:block;font-family:'Cormorant Garamond',serif;font-size:14.5px;
-  color:var(--warm);letter-spacing:0.06em;text-decoration:none;
+  color:var(--text-light);letter-spacing:0.06em;text-decoration:none;
   margin-bottom:7px;transition:color 0.3s;
 }
-.footer-contact a:hover{color:var(--gold);}
+.footer-contact a:hover{color:var(--gold-l);}
 .footer-email a{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;
-  color:var(--muted);text-decoration:none;
+  color:var(--muted-light);text-decoration:none;
 }
 .footer-wishes{
   font-family:'Great Vibes',cursive;font-size:2.2rem;
-  color:var(--brown);margin-top:26px;
+  color:var(--gold-l);margin-top:26px;
 }
 .footer-sig{
   font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;
-  color:var(--warm);margin-top:6px;letter-spacing:0.06em;
+  color:var(--text-light);margin-top:6px;letter-spacing:0.06em;
+}
+.footer-sharing{
+  font-family:'Great Vibes',cursive;font-size:1.6rem;
+  color:var(--gold-l);margin-top:14px;
+}
+.footer-signoff{
+  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;
+  color:var(--text-light);letter-spacing:0.08em;margin-top:2px;
+}
+.footer-gift{
+  font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.25em;
+  color:var(--muted-light);text-transform:uppercase;margin-top:14px;opacity:0.7;
 }
 .footer-pray{
   font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:0.3em;
-  color:var(--muted);text-transform:uppercase;margin-top:20px;opacity:0.6;
+  color:var(--muted-light);text-transform:uppercase;margin-top:20px;opacity:0.6;
 }
 
 /* ── MUSIC BUTTON ── */
 #musicBtn{
   position:fixed;bottom:22px;right:22px;
   width:46px;height:46px;border-radius:50%;
-  background:rgba(255,248,238,0.92);
+  background:rgba(26,46,31,0.88);
   border:1px solid rgba(184,135,58,0.35);
-  color:var(--gold);
+  color:var(--gold-l);
   display:flex;align-items:center;justify-content:center;
   cursor:pointer;z-index:50;
   transition:all 0.3s;
   box-shadow:0 4px 16px rgba(120,80,30,0.12);
   backdrop-filter:blur(6px);
 }
-#musicBtn:hover{background:var(--gold);color:#fff;transform:scale(1.05);}
+#musicBtn:hover{background:var(--gold-l);color:var(--dark);transform:scale(1.05);}
 #musicBtn.playing{animation:music-ring 2s ease-in-out infinite;}
 @keyframes music-ring{
   0%,100%{box-shadow:0 4px 16px rgba(120,80,30,0.12);}
@@ -620,10 +637,10 @@ footer::before{
 <!-- ════ ENVELOPE OVERLAY ════ -->
 <div id="env-overlay">
   <!-- floating emojis -->
-  <span class="overlay-flower" style="top:8%;left:6%;animation-delay:0s">🌸</span>
-  <span class="overlay-flower" style="top:12%;right:8%;animation-delay:1s">💐</span>
-  <span class="overlay-flower" style="bottom:15%;left:5%;animation-delay:2s">🌺</span>
-  <span class="overlay-flower" style="bottom:10%;right:6%;animation-delay:0.5s">🌸</span>
+  <span class="overlay-flower" style="top:8%;left:6%;animation-delay:0s">✿</span>
+  <span class="overlay-flower" style="top:12%;right:8%;animation-delay:1s">🌿</span>
+  <span class="overlay-flower" style="bottom:15%;left:5%;animation-delay:2s">✿</span>
+  <span class="overlay-flower" style="bottom:10%;right:6%;animation-delay:0.5s">✿</span>
   <span class="overlay-flower" style="top:45%;left:2%;animation-delay:1.5s">✨</span>
   <span class="overlay-flower" style="top:40%;right:2%;animation-delay:2.5s">✨</span>
 
@@ -634,9 +651,9 @@ footer::before{
     <div class="env-card">
       <div class="env-card-inner" style="text-align:center;padding:14px;">
         <div class="env-card-icon"><i class="fa-solid fa-ring"></i></div>
-        <p class="env-card-label">Engagement Invitation</p>
+        <p class="env-card-label">Betrothal Invitation</p>
         <p class="env-card-names">Reny &amp; Joseph</p>
-        <p class="env-card-date">4 · July · 2026</p>
+        <p class="env-card-date">28 · June · 2026</p>
       </div>
     </div>
     <div class="env-pocket">
@@ -660,48 +677,48 @@ footer::before{
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner-border"></div>
-    <div class="orn orn-tl"><svg viewBox="0 0 38 38" fill="none"><path d="M3 35 Q3 3 35 3" stroke="#b8873a" stroke-width="0.8" opacity="0.5"/><circle cx="3" cy="3" r="1.5" fill="#b8873a" opacity="0.6"/><circle cx="35" cy="3" r="1" fill="#b8873a" opacity="0.3"/><circle cx="3" cy="35" r="1" fill="#b8873a" opacity="0.3"/></svg></div>
-    <div class="orn orn-tr"><svg viewBox="0 0 38 38" fill="none"><path d="M3 35 Q3 3 35 3" stroke="#b8873a" stroke-width="0.8" opacity="0.5"/><circle cx="3" cy="3" r="1.5" fill="#b8873a" opacity="0.6"/></svg></div>
-    <div class="orn orn-bl"><svg viewBox="0 0 38 38" fill="none"><path d="M3 35 Q3 3 35 3" stroke="#b8873a" stroke-width="0.8" opacity="0.5"/><circle cx="3" cy="3" r="1.5" fill="#b8873a" opacity="0.6"/></svg></div>
-    <div class="orn orn-br"><svg viewBox="0 0 38 38" fill="none"><path d="M3 35 Q3 3 35 3" stroke="#b8873a" stroke-width="0.8" opacity="0.5"/><circle cx="3" cy="3" r="1.5" fill="#b8873a" opacity="0.6"/></svg></div>
+    <div class="orn orn-tl"><svg viewBox="0 0 38 38" fill="none"><path d="M3 35 Q3 3 35 3" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><circle cx="3" cy="3" r="1.5" fill="#c9a84c" opacity="0.6"/><circle cx="35" cy="3" r="1" fill="#c9a84c" opacity="0.3"/><circle cx="3" cy="35" r="1" fill="#c9a84c" opacity="0.3"/></svg></div>
+    <div class="orn orn-tr"><svg viewBox="0 0 38 38" fill="none"><path d="M3 35 Q3 3 35 3" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><circle cx="3" cy="3" r="1.5" fill="#c9a84c" opacity="0.6"/></svg></div>
+    <div class="orn orn-bl"><svg viewBox="0 0 38 38" fill="none"><path d="M3 35 Q3 3 35 3" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><circle cx="3" cy="3" r="1.5" fill="#c9a84c" opacity="0.6"/></svg></div>
+    <div class="orn orn-br"><svg viewBox="0 0 38 38" fill="none"><path d="M3 35 Q3 3 35 3" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/><circle cx="3" cy="3" r="1.5" fill="#c9a84c" opacity="0.6"/></svg></div>
 
-    <p class="hero-tag anim-fade">Engagement Invitation</p>
-    <div class="hero-names anim-fade anim-d1">
-      Reny
-      <span class="hero-amp">&amp;</span>
-      Joseph
-    </div>
-    <div class="hero-divider anim-fade anim-d2">
+    <p class="hero-tag anim-fade">Betrothal Invitation</p>
+    <p class="hero-verse anim-fade anim-d1" style="margin-bottom:6px;">"And now these three remain: faith, hope and love.<br>But the greatest of these is love."</p>
+    <p class="hero-verse-ref anim-fade anim-d2">— 1 Corinthians 13:13 —</p>
+    <div class="hero-divider anim-fade anim-d2" style="margin-top:18px;">
       <div class="hero-divider-line"></div>
       <div class="hero-divider-gem"></div>
       <div class="hero-divider-line r"></div>
     </div>
-    <p class="hero-verse anim-fade anim-d3">"He has made everything beautiful in its time"</p>
-    <p class="hero-verse-ref anim-fade anim-d4">— Ecclesiastes 3:11 —</p>
+    <div class="hero-names anim-fade anim-d3">
+      Reny
+      <span class="hero-amp">&amp;</span>
+      Joseph
+    </div>
   </section>
 
   <!-- PARENTS -->
   <section class="parents">
     <svg class="ornate-wave anim-fade" width="160" height="18" viewBox="0 0 160 18" fill="none">
-      <path d="M8 9 Q40 2 80 9 Q120 16 152 9" stroke="#b8873a" stroke-width="0.7" opacity="0.45"/>
-      <path d="M8 9 Q40 16 80 9 Q120 2 152 9" stroke="#b8873a" stroke-width="0.7" opacity="0.22"/>
-      <circle cx="80" cy="9" r="2.2" fill="#b8873a" opacity="0.5"/>
-      <circle cx="8" cy="9" r="1.1" fill="#b8873a" opacity="0.35"/>
-      <circle cx="152" cy="9" r="1.1" fill="#b8873a" opacity="0.35"/>
+      <path d="M8 9 Q40 2 80 9 Q120 16 152 9" stroke="#c9a84c" stroke-width="0.7" opacity="0.45"/>
+      <path d="M8 9 Q40 16 80 9 Q120 2 152 9" stroke="#c9a84c" stroke-width="0.7" opacity="0.22"/>
+      <circle cx="80" cy="9" r="2.2" fill="#c9a84c" opacity="0.5"/>
+      <circle cx="8" cy="9" r="1.1" fill="#c9a84c" opacity="0.35"/>
+      <circle cx="152" cy="9" r="1.1" fill="#c9a84c" opacity="0.35"/>
     </svg>
     <p class="parents-names anim-fade anim-d1">Shaijn Joseph &amp; Sheeba Shajin</p>
-    <p class="parents-addr anim-fade anim-d2">Kochi, Kerala</p>
+    <p class="parents-addr anim-fade anim-d2">Aluva, Kerala</p>
     <p class="parents-desc anim-fade anim-d3">
-      cordially request the honour of your presence<br>
-      at the engagement of their beloved children
+      joyfully invite you to celebrate<br>
+      the betrothal of their beloved children
     </p>
   </section>
 
   <!-- PHOTO -->
   <section class="photo-section" style="padding-top:32px;">
     <div class="photo-wrap anim-scale">
-      <span class="photo-rose photo-rose-tl">🌸</span>
-      <span class="photo-rose photo-rose-br">🌸</span>
+      <span class="photo-rose photo-rose-tl">🌿</span>
+      <span class="photo-rose photo-rose-br">🌿</span>
       <div class="photo-frame">
         <img src="couple.jpeg" alt="Reny and Joseph"
           onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600'">
@@ -720,7 +737,7 @@ footer::before{
       <p class="cc-role">The Groom</p>
       <p class="cc-parent">
         Son of Mr. Thomas K.R. &amp; Mrs. Rosamma Thomas<br>
-        <span style="font-size:11px;opacity:0.75">Kerala</span>
+        <span style="font-size:11px;opacity:0.75">Changanacherry,Kottayam,Kerala</span>
       </p>
     </div>
 
@@ -735,7 +752,7 @@ footer::before{
       <p class="cc-role">The Bride</p>
       <p class="cc-parent">
         Daughter of Mr. Shaijn Joseph &amp; Mrs. Sheeba Shajin<br>
-        <span style="font-size:11px;opacity:0.75">Kochi, Kerala</span>
+        <span style="font-size:11px;opacity:0.75">Aluva,Ernakulam,Kerala</span>
       </p>
     </div>
   </section>
@@ -744,26 +761,26 @@ footer::before{
   <section class="events">
     <div class="events-header anim-fade">
       <p class="events-tag">Save The Date</p>
-      <p class="events-date-big">4th July 2026</p>
-      <p class="events-day">Saturday</p>
+      <p class="events-date-big">28th June 2026</p>
+      <p class="events-day">Sunday</p>
     </div>
 
     <div class="event-card anim-scale anim-d1">
       <div class="event-icon"><i class="fa-solid fa-ring"></i></div>
-      <p class="event-title">Engagement Ceremony</p>
+      <p class="event-title">Betrothal Ceremony</p>
       <div class="event-div"></div>
-      <p class="event-time">11:00 AM</p>
+      <p class="event-time">12:00 PM</p>
       <p class="event-venue">
-        St. Mary's Church, Vadakkekara<br>Kerala
+        St. Dominic's Syro-Malabar Church, Aluva<br>Kerala
       </p>
-      <a class="map-btn" href="https://maps.app.goo.gl/3f8RB37ZEanEoBdj8" target="_blank">
+      <a class="map-btn" href="https://maps.app.goo.gl/XUBhbSgmUvkCozjj6" target="_blank">
         <i class="fa-solid fa-location-dot"></i> Navigate to Venue
       </a>
     </div>
 
     <div style="text-align:center;position:relative;z-index:2;" class="anim-fade anim-d2">
       <a class="cal-btn"
-        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Engagement+of+Reny+%26+Joseph&dates=20260704T110000/20260704T130000&details=Engagement+of+Reny+Shajin+Joseph+and+Joseph+Thomas&location=St.+Mary%27s+Church%2C+Vadakkekara"
+        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Betrothal+of+Reny+%26+Joseph&dates=20260704T110000/20260704T130000&details=Betrothal+of+Reny+Shajin+Joseph+and+Joseph+Thomas&location=St.+Mary%27s+Church%2C+Vadakkekara"
         target="_blank">
         <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
       </a>
@@ -772,7 +789,7 @@ footer::before{
 
   <!-- COUNTDOWN -->
   <section class="countdown-section">
-    <p class="cd-label anim-fade">Counting down to the engagement</p>
+    <p class="cd-label anim-fade">Counting down to the betrothal</p>
     <div class="cd-grid anim-fade anim-d1">
       <div class="cd-box"><span class="cd-num" id="cd-d">00</span><span class="cd-unit">Days</span></div>
       <div class="cd-box"><span class="cd-num" id="cd-h">00</span><span class="cd-unit">Hours</span></div>
@@ -783,15 +800,7 @@ footer::before{
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-tag anim-fade">RSVP · 4th July 2026 · 11:00 AM</p>
-    <div class="footer-divider"></div>
-    <div class="footer-contact anim-fade anim-d1">
-      <a href="tel:+919876543210">+91 98765 43210</a>
-      <a href="tel:+919123456789">+91 91234 56789</a>
-    </div>
-    <div class="footer-email anim-fade anim-d2" style="margin-top:10px;">
-      <a href="mailto:reny.joseph2026@gmail.com">reny.joseph2026@gmail.com</a>
-    </div>
+    <p class="footer-tag anim-fade">RSVP · 28th June 2026 · 12:00 PM</p>
     <div class="footer-divider" style="margin-top:22px;"></div>
     <p class="footer-wishes anim-fade anim-d3">With love &amp; blessings,</p>
     <p class="footer-sig anim-fade anim-d4">The Shajin Joseph &amp; Thomas K.R. Families</p>
@@ -799,6 +808,12 @@ footer::before{
       <i class="fa-solid fa-dove"></i>
     </div>
     <p class="footer-pray anim-fade anim-d5">Please keep us in your prayers</p>
+    <div class="footer-divider" style="margin-top:22px;"></div>
+    <p class="footer-sharing anim-fade anim-d5">Sharing happiness —</p>
+    <p class="footer-signoff anim-fade anim-d5">Rency S. Joseph</p>
+    <p class="footer-gift anim-fade anim-d5">
+      <i class="fa-solid fa-gift" style="font-size:0.8rem;margin-right:6px;opacity:0.5;"></i>Kindly avoid gift
+    </p>
   </footer>
 
 </main>
@@ -891,7 +906,7 @@ function initScrollAnim(){
 }
 
 // ════ COUNTDOWN ════
-const wDate=new Date("July 4, 2026 11:00:00").getTime();
+const wDate=new Date("June 28, 2026 12:00:00").getTime();
 let prevSec=-1;
 function updateCountdown(){
   const diff=wDate-Date.now();
@@ -930,7 +945,7 @@ const petals=Array.from({length:35},()=>({
   rot:Math.random()*360,
   rotSpeed:Math.random()*0.5-0.25,
   opacity:Math.random()*0.35+0.05,
-  hue:Math.random()>0.5?'rgba(232,196,196,OP)':'rgba(212,169,85,OP)',
+  hue:Math.random()>0.5?'rgba(140,190,140,OP)':'rgba(212,169,85,OP)',
 }));
 
 function drawPetals(){
@@ -995,7 +1010,7 @@ function buildMusic(){
       });
     });
   }
-  let ls=audioCtx.currentTime+0.1;
+  let ls=audioCtx.currentTime+0.1;  
   sched(ls);
   const iv=setInterval(()=>{if(!isPlaying){clearInterval(iv);return;}ls+=loopLen;sched(ls);},loopLen*1000-300);
 }
